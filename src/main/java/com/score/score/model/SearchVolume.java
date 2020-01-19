@@ -1,11 +1,11 @@
 package com.score.score.model;
 
-public class Score {
+public class SearchVolume {
 
     String keyword;
     Integer score;
 
-    public Score() {
+    public SearchVolume() {
     }
 
     public String getKeyword() {

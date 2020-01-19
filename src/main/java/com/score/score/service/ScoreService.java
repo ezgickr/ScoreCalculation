@@ -1,6 +1,6 @@
 package com.score.score.service;
 
-import com.score.score.model.Score;
+import com.score.score.model.SearchVolume;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,7 +21,7 @@ public class ScoreService {
      * @param keyword : "i", "ip",.., "iphone charger"
      * @return
      */
-    public Score calculateScore(String keyword) {
+    public SearchVolume calculateScore(String keyword) {
 
         IntStream stream = IntStream.range(1, keyword.length()+1);
         List<List<String>> keywordList = stream.parallel()
@@ -29,7 +29,7 @@ public class ScoreService {
                 .map(m-> amazonService.getKeywordList(m))
                 .collect(Collectors.toList());
 
-        Score score = new Score();
+        SearchVolume score = new SearchVolume();
 
         int count = 0;
         for(int i = 0; i<keywordList.size(); i++){
