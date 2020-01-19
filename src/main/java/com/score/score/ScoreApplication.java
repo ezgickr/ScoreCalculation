@@ -8,15 +8,14 @@ import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
+import java.time.Duration;
+import java.time.temporal.ChronoUnit;
+import java.time.temporal.TemporalUnit;
+
 @SpringBootApplication
 public class ScoreApplication{
 
 	private static final Logger log = LoggerFactory.getLogger(ScoreApplication.class);
-
-	@Bean
-	public RestTemplate restTemplate(RestTemplateBuilder builder) {
-		return builder.build();
-	}
 
 	public static void main(String[] args) {
 		SpringApplication.run(ScoreApplication.class, args);
